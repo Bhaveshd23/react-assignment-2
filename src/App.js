@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App = (props) => {
+  console.log(props)
+  const { name, location, bloodGroup, age, profileImg } = props.data;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div className='container'>
+        <div className='main'>
+          <div className='img'>
+            <img src={profileImg} alt="userImage" />
+          </div>
+          <div className='namediv'>
+            <span className='name'>{name}</span>
+          </div>
+          <div className='location'>
+            <span className='loc'>Location</span>
+            <span className='locData'>{location}</span>
+          </div>
+          <div className='location'>
+            <span className='loc'>Blood Group</span>
+            <span className='locData'>{bloodGroup}</span>
+          </div>
+          <div className='location'>
+            <span className='loc'>Age</span>
+            <span className='locData'>{age}</span>
+          </div>
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default App;
